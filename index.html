@@ -1,853 +1,338 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Екологічна пляшка для води AquaPure Bottle — збереження температури до 24 годин, преміальні матеріали, 100% захист від протікання.">
-    <title>AquaPure Bottle — Екологічна пляшка для води щодня</title>
-    <style>
-        /* ==========================================================================
-           1. ДИЗАЙН-СИСТЕМА ТА ОСНОВНІ НАЛАШТУВАННЯ
-           ========================================================================== */
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
-        :root {
-            --primary: #0d9488;
-            --primary-hover: #0f766e;
-            --primary-light: #f0fdfa;
-            --accent: #0284c7;
-            --accent-hover: #0369a1;
-            --gradient-main: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
-            --gradient-subtle: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --text-light: #64748b;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --bg-glass: rgba(255, 255, 255, 0.88);
-            --border-color: #e2e8f0;
-            --border-focus: #0d9488;
-            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.03);
-            --shadow-md: 0 10px 25px -5px rgba(13, 148, 136, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-            --shadow-lg: 0 20px 30px -10px rgba(15, 23, 42, 0.12);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-full: 9999px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        main {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* ==========================================================================
-           2. ШАПКА САЙТУ ТА НАВІГАЦІЯ (HEADER & NAV)
-           ========================================================================== */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 16px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: var(--shadow-sm);
-        }
-
-        header h1 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: var(--gradient-main);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 8px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 8px 16px;
-            border-radius: var(--radius-full);
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--primary);
-            background-color: var(--primary-light);
-        }
-
-        /* ==========================================================================
-           3. СЕКЦІЇ ТА ЗАГОЛОВКИ
-           ========================================================================== */
-        section {
-            background: var(--bg-card);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            margin-bottom: 36px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-        }
-
-        section:hover {
-            box-shadow: var(--shadow-lg);
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 24px;
-            position: relative;
-            display: inline-block;
-            letter-spacing: -0.3px;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 45px;
-            height: 4px;
-            background: var(--gradient-main);
-            border-radius: var(--radius-full);
-        }
-
-        /* ==========================================================================
-           4. HERO-БЛОК (ГОЛОВНИЙ БАНЕР)
-           ========================================================================== */
-        #hero {
-            background: var(--gradient-subtle);
-            border: 1px solid rgba(13, 148, 136, 0.15);
-            text-align: center;
-            padding: 60px 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #hero h2 {
-            font-size: 2.3rem;
-            margin-bottom: 16px;
-        }
-
-        #hero h2::after {
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-        }
-
-        #hero p {
-            max-width: 750px;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 28px;
-        }
-
-        #hero figure {
-            width: 100%;
-            max-width: 720px;
-            margin-bottom: 32px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        #hero img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        #hero figure:hover img {
-            transform: scale(1.02);
-        }
-
-        #hero a[href="#order"] {
-            display: inline-block;
-            background: var(--gradient-main);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 16px 36px;
-            border-radius: var(--radius-full);
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.35);
-            transition: var(--transition);
-        }
-
-        #hero a[href="#order"]:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(13, 148, 136, 0.45);
-        }
-
-        /* ==========================================================================
-           5. БЛОК «ПРО ПРОДУКТ» ТА ЦИТАТА
-           ========================================================================== */
-        #about p {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 24px;
-        }
-
-        blockquote {
-            background: var(--primary-light);
-            border-left: 5px solid var(--primary);
-            padding: 20px 28px;
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            margin-top: 20px;
-        }
-
-        blockquote p {
-            font-style: italic;
-            color: var(--primary-hover);
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0 !important;
-        }
-
-        /* ==========================================================================
-           6. ТАБЛИЦЯ ХАРАКТЕРИСТИК (SPECS)
-           ========================================================================== */
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 16px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        caption {
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 12px;
-            text-align: left;
-            font-size: 0.95rem;
-        }
-
-        thead {
-            background: var(--gradient-main);
-            color: #ffffff;
-        }
-
-        th, td {
-            padding: 16px 20px;
-            text-align: left;
-        }
-
-        thead th {
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-
-        tbody tr {
-            transition: var(--transition);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-
-        tbody tr:hover {
-            background-color: var(--primary-light);
-        }
-
-        tbody th {
-            font-weight: 600;
-            color: var(--text-main);
-            width: 35%;
-        }
-
-        tbody td {
-            color: var(--text-muted);
-        }
-
-        /* ==========================================================================
-           7. ПЕРЕВАГИ (BENEFITS)
-           ========================================================================== */
-        #benefits ul {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            list-style: none;
-        }
-
-        #benefits li {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--accent);
-            padding: 20px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        #benefits li:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-            border-left-color: var(--primary);
-        }
-
-        #benefits strong {
-            color: var(--primary);
-            display: block;
-            font-size: 1.1rem;
-            margin-bottom: 6px;
-        }
-
-        /* ==========================================================================
-           8. ГАЛЕРЕЯ (GALLERY)
-           ========================================================================== */
-        #gallery > div {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        #gallery figure {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        #gallery figure:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-        }
-
-        #gallery img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            display: block;
-            transition: var(--transition);
-        }
-
-        #gallery figure:hover img {
-            transform: scale(1.04);
-        }
-
-        figcaption {
-            padding: 16px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-align: center;
-            background: #ffffff;
-        }
-
-        /* ==========================================================================
-           9. ФОРМА ЗАМОВЛЕННЯ (ORDER FORM)
-           ========================================================================== */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        fieldset {
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            background: #fdfdfd;
-        }
-
-        legend {
-            font-weight: 700;
-            color: var(--primary);
-            padding: 4px 12px;
-            background: var(--primary-light);
-            border: 1px solid rgba(13, 148, 136, 0.2);
-            border-radius: var(--radius-full);
-            font-size: 0.95rem;
-        }
-
-        form p {
-            margin-bottom: 16px;
-        }
-
-        form p:last-child {
-            margin-bottom: 0;
-        }
-
-        label {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            display: inline-block;
-            margin-bottom: 6px;
-        }
-
-        input[type="text"],
-        input[type="tel"],
-        input[type="email"],
-        input[type="number"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1.5px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            font-family: inherit;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            background-color: #ffffff;
-            transition: var(--transition);
-        }
-
-        input[type="text"]:focus,
-        input[type="tel"]:focus,
-        input[type="email"]:focus,
-        input[type="number"]:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--border-focus);
-            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
-        }
-
-        fieldset fieldset {
-            background: #ffffff;
-            margin-top: 12px;
-            margin-bottom: 16px;
-            padding: 16px 20px;
-        }
-
-        fieldset fieldset legend {
-            background: #ffffff;
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-            font-size: 0.88rem;
-        }
-
-        input[type="radio"],
-        input[type="checkbox"] {
-            accent-color: var(--primary);
-            width: 18px;
-            height: 18px;
-            vertical-align: middle;
-            margin-right: 8px;
-            cursor: pointer;
-        }
-
-        fieldset label {
-            cursor: pointer;
-            margin-bottom: 8px;
-        }
-
-        button[type="submit"] {
-            background: var(--gradient-main);
-            color: #ffffff;
-            border: none;
-            padding: 14px 32px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            border-radius: var(--radius-full);
-            cursor: pointer;
-            box-shadow: 0 6px 18px rgba(13, 148, 136, 0.3);
-            transition: var(--transition);
-            margin-right: 12px;
-        }
-
-        button[type="submit"]:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 22px rgba(13, 148, 136, 0.4);
-        }
-
-        button[type="reset"] {
-            background: transparent;
-            color: var(--text-muted);
-            border: 1.5px solid var(--border-color);
-            padding: 13px 28px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: var(--radius-full);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        button[type="reset"]:hover {
-            background: #f1f5f9;
-            color: var(--text-main);
-        }
-
-        /* ==========================================================================
-           10. ПІДВАЛ САЙТУ (FOOTER)
-           ========================================================================== */
-        footer {
-            background: #0f172a;
-            color: #f8fafc;
-            padding: 50px 40px 30px;
-            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-            margin-top: 40px;
-        }
-
-        footer h2 {
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        footer address {
-            font-style: normal;
-            line-height: 1.8;
-            color: #94a3b8;
-            margin-bottom: 24px;
-        }
-
-        footer address p {
-            margin-bottom: 8px;
-        }
-
-        footer a {
-            color: #38bdf8;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        footer a:hover {
-            color: #7dd3fc;
-            text-decoration: underline;
-        }
-
-        footer p:last-child {
-            border-top: 1px solid #334155;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-
-        /* ==========================================================================
-           11. АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ (RESPONSIVE)
-           ========================================================================== */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 16px 20px;
-                gap: 12px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 4px;
-            }
-
-            nav a {
-                padding: 6px 12px;
-                font-size: 0.88rem;
-            }
-
-            section {
-                padding: 24px 20px;
-                margin-bottom: 24px;
-            }
-
-            #hero {
-                padding: 40px 20px;
-            }
-
-            #hero h2 {
-                font-size: 1.7rem;
-            }
-
-            tbody th {
-                width: 45%;
-            }
-
-            button[type="submit"],
-            button[type="reset"] {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 12px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThermoKeep — Стильні та надійні вакуумні термоси</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Шапка сайту -->
-    <header>
-        <h1>AquaPure Bottle</h1>
-        <nav aria-label="Головна навігація">
-            <ul>
-                <li><a href="#about">Про пляшку</a></li>
-                <li><a href="#specs">Характеристики</a></li>
-                <li><a href="#benefits">Переваги</a></li>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#order">Замовити</a></li>
-                <li><a href="#contacts">Контакти</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Розділ 1: Шапка сайту та Навігація -->
+  <header>
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <h1><span class="brand-icon">💧</span> ThermoKeep</h1>
+        <p><em>Надійні термоси для твого насиченого дня</em></p>
+      </div>
+      
+      <nav>
+        <ul>
+          <li><a href="#hero">Головна</a></li>
+          <li><a href="#features">Переваги</a></li>
+          <li><a href="#instructions">Інструкція</a></li>
+          <li><a href="#models">Моделі</a></li>
+          <li><a href="#order">Замовити</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <!-- Головний банер / Hero-блок -->
-        <section id="hero">
-            <h2>Ваша ідеальна пляшка для води щодня</h2>
-            <p>
-                AquaPure Bottle — це поєднання інноваційної технології вакуумної термоізоляції, 
-                екологічних матеріалів преміум-класу та витонченого ергономічного дизайну. 
-                Вона зберігає напої крижаними до 24 годин або гарячими до 12 годин за будь-яких умов.
-            </p>
-            <figure>
-                <img 
-                    src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80" 
-                    alt="Стильна багаторазова пляшка для води з нержавіючої сталі на мінімалістичному фоні" 
-                    width="600" 
-                    height="400"
-                >
-            </figure>
-            <p>
-                <a href="#order"><strong>Замовити зараз</strong></a>
-            </p>
-        </section>
+  <hr>
 
-        <!-- Блок «Про продукт» -->
-        <section id="about">
-            <h2>Про продукт</h2>
-            <p>
-                AquaPure Bottle створена з турботою про здоров’я людини та навколишнє середовище. 
-                Корпус виготовлений із високоякісної харчової нержавіючої сталі 18/8 (SUS 304), 
-                яка не окислюється, не вбирає запахів і не змінює смак води. 
-                Кришка виконана з міцного BPA-Free поліпропілену з натуральною бамбуковою накладкою 
-                та харчовим силіконовим ущільнювачем.
-            </p>
-            <blockquote>
-                <p><em>«Маленькі щоденні звички змінюють планету. Обирайте багаторазове — творіть чисте майбутнє разом з AquaPure.»</em></p>
-            </blockquote>
-        </section>
+  <!-- Розділ 2: Головний екран (Hero Section) -->
+  <section id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">⭐ Інноваційна термоізоляція 2026</div>
+        <h2>Зберігай <span class="highlight">ідеальну температуру</span> кожного ковтка</h2>
+        <p>Вакуумні термоси ThermoKeep зберігають ваші напої гарячими до 12 годин та крижаними до 24 годин завдяки інноваційній технології подвійної вакуумної ізоляції стінок. Вони виготовлені з високоякісних матеріалів та створені для зручного щоденного використання.</p>
+        
+        <div class="hero-cta-group">
+          <a href="#order" class="btn-primary">
+            <strong>Оформити передзамовлення зі знижкою</strong> &rarr;
+          </a>
+        </div>
 
-        <!-- Технічні характеристики -->
-        <section id="specs">
-            <h2>Технічні характеристики</h2>
-            <table border="1">
-                <caption>Детальна специфікація термопляшки AquaPure Bottle</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Параметр</th>
-                        <th scope="col">Значення</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Об'єм</th>
-                        <td>500 мл / 750 мл / 1000 мл</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Матеріал корпусу та деталей</th>
-                        <td>Харчова нержавіюча сталь 18/8, харчовий силікон, натуральний бамбук</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Збереження температури</th>
-                        <td>Холодна — до 24 год, Гаряча — до 12 год</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Вага</th>
-                        <td>280 г (для об'єму 500 мл, порожня)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Герметичність</th>
-                        <td>100% захист від протікання (силіконовий контур)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Діаметр шийки</th>
-                        <td>45 мм (зручно додавати кубики льоду та фрукти)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value">12 год</span>
+            <span class="stat-label">Збереження тепла</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">24 год</span>
+            <span class="stat-label">Збереження холоду</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Герметичність</span>
+          </div>
+        </div>
+      </div>
 
-        <!-- Переваги та особливості -->
-        <section id="benefits">
-            <h2>Переваги та особливості</h2>
-            <ul>
-                <li>
-                    <strong>Екологічність:</strong> одна пляшка замінює понад 1500 одноразових пластикових пляшок на рік, знижуючи рівень відходів.
-                </li>
-                <li>
-                    <strong>Подвійні вакуумні стінки:</strong> відмінна теплоізоляція — корпус не нагрівається зовні від гарячих напоїв та не збирає конденсат від холодних.
-                </li>
-                <li>
-                    <strong>Зручний тримач:</strong> ергономічна ручка/ремінець зі сталі та текстилю для легкого транспортування в руці чи кріплення на рюкзак.
-                </li>
-                <li>
-                    <strong>Універсальність та легкий догляд:</strong> широка шийка полегшує миття, пляшка ідеально підходить для фітнесу, велопрогулянок, офісу та далеких подорожей.
-                </li>
-            </ul>
-        </section>
+      <div class="hero-visual">
+        <div class="hero-image-card">
+          <div class="floating-badge floating-badge-hot">
+            <span>🔥</span> 12 год гаряче
+          </div>
+          
+          <img src="thermos.jpg" alt="Вакуумний термос ThermoKeep з нержавіючої сталі" width="300" height="300">
+          
+          <div class="floating-badge floating-badge-cold">
+            <span>❄️</span> 24 год крижане
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Медіа / Галерея -->
-        <section id="gallery">
-            <h2>Галерея</h2>
-            <div>
-                <figure>
-                    <img 
-                        src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" 
-                        alt="Пляшка AquaPure на скелястій вершині гори під час туристичного походу" 
-                        width="400" 
-                        height="300"
-                    >
-                    <figcaption>Пляшка на природі під час гірського походу</figcaption>
-                </figure>
-                <figure>
-                    <img 
-                        src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" 
-                        alt="Пляшка для води поруч зі спортивним інвентарем у сучасному тренажерному залі" 
-                        width="400" 
-                        height="300"
-                    >
-                    <figcaption>Ідеальний супутник на тренуваннях у спортзалі</figcaption>
-                </figure>
-                <figure>
-                    <img 
-                        src="https://images.unsplash.com/photo-1589365278144-c9e705f843ba?auto=format&fit=crop&w=600&q=80" 
-                        alt="Збільшений вигляд бамбукової кришки з металевою ручкою та силіконовим ущільнювальним кільцем" 
-                        width="400" 
-                        height="300"
-                    >
-                    <figcaption>Деталі бамбукової кришки та герметичного клапана</figcaption>
-                </figure>
+  <hr>
+
+  <!-- Розділ 3: Основні переваги та характеристики -->
+  <section id="features">
+    <div class="container">
+      <h3>Чому обирають ThermoKeep?</h3>
+      <p class="section-subtitle">Технології та матеріали преміум-класу для вашого щоденного комфорту</p>
+      
+      <ul class="features-grid">
+        <li class="feature-card">
+          <div class="feature-icon-wrapper">🔥</div>
+          <strong>Подвійна вакуумна ізоляція:</strong>
+          Зберігає тепло 12 годин, а холод — 24 години завдяки мідному напиленню всередині колби.
+        </li>
+        <li class="feature-card">
+          <div class="feature-icon-wrapper">🛡️</div>
+          <strong>100% герметичність:</strong>
+          Спеціальна кришка із силіконовим ущільнювачем надійно захищає від протікання у рюкзаку чи сумці.
+        </li>
+        <li class="feature-card">
+          <div class="feature-icon-wrapper">✨</div>
+          <strong>Харчова сталь 18/8:</strong>
+          Безпечний матеріал без вмісту BPA, не вбирає запахів та стійкий до корозії й механічних пошкоджень.
+        </li>
+        <li class="feature-card">
+          <div class="feature-icon-wrapper">🌱</div>
+          <strong>Екологічність:</strong>
+          Допомагає відмовитися від одноразового пластику та піклуватися про чистоту довкілля щодня.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Розділ 4: Інструкція з експлуатації -->
+  <section id="instructions">
+    <div class="container">
+      <h3>Як досягти максимальної ефективності?</h3>
+      <p class="section-subtitle">Прості кроки для найдовшого збереження температури ваших напоїв</p>
+      
+      <ol class="steps-list">
+        <li class="step-card">
+          <span class="step-number">1</span>
+          <p>Перед першим використанням промийте термос теплою водою з милом.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-number">2</span>
+          <p>Для максимального збереження тепла прогрійте колбу гарячою водою впродовж 3 хвилин перед наповненням.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-number">3</span>
+          <p>Залийте свій улюблений напій і щільно закрутіть кришку.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-number">4</span>
+          <p>Після щоденного використання промивайте виріб вручну та просушуйте відкритим.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Розділ 5: Таблиця порівняння моделей -->
+  <section id="models">
+    <div class="container">
+      <h3>Лінійка моделей та технічні характеристики</h3>
+      <p class="section-subtitle">Оберіть ідеальний об'єм термоса під свої потреби та щоденний ритм</p>
+      
+      <div class="table-wrapper">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Назва моделі</th>
+              <th>Об'єм</th>
+              <th>Збереження тепла</th>
+              <th>Збереження холоду</th>
+              <th>Ціна</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ThermoKeep Compact</td>
+              <td>350 мл</td>
+              <td>8 годин</td>
+              <td>18 годин</td>
+              <td>650 грн</td>
+            </tr>
+            <tr class="featured-row">
+              <td>ThermoKeep Classic <span class="badge-popular">Хіт продажу</span></td>
+              <td>500 мл</td>
+              <td>12 годин</td>
+              <td>24 години</td>
+              <td>850 грн</td>
+            </tr>
+            <tr>
+              <td>ThermoKeep Travel Max</td>
+              <td>750 мл</td>
+              <td>16 годин</td>
+              <td>24 години</td>
+              <td>1050 грн</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Розділ 6: Форма замовлення та зворотного зв'язку -->
+  <section id="order">
+    <div class="container order-container">
+      <div class="form-card">
+        <div class="form-header">
+          <h3>Оформити передзамовлення</h3>
+          <p>Заповніть форму нижче, щоб отримати знижку 15% та швидку доставку по Україні</p>
+        </div>
+        
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="client-name">Ваше повне ім'я:</label>
+              <input type="text" id="client-name" name="client_name" placeholder="Тарас Шевченко" required>
             </div>
-        </section>
+            
+            <div class="form-group">
+              <label for="client-email">Електронна пошта (Email):</label>
+              <input type="email" id="client-email" name="client_email" placeholder="example@email.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="client-phone">Номер телефону:</label>
+              <input type="tel" id="client-phone" name="client_phone" placeholder="+380XXXXXXXXX" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="client-model">Оберіть модель термоса:</label>
+              <select id="client-model" name="selected_model">
+                <option value="compact">ThermoKeep Compact (350 мл)</option>
+                <option value="classic" selected>ThermoKeep Classic (500 мл)</option>
+                <option value="travel">ThermoKeep Travel Max (750 мл)</option>
+              </select>
+            </div>
+            
+            <div class="form-group form-group-full">
+              <label for="client-qty">Кількість (шт):</label>
+              <input type="number" id="client-qty" name="quantity" min="1" max="10" value="1">
+            </div>
+            
+            <div class="color-selector-section">
+              <p>Оберіть колір корпусу:</p>
+              <div class="color-options-group">
+                <div class="color-option-item">
+                  <input type="radio" id="color-black" name="color" value="black" checked>
+                  <label for="color-black">
+                    <span class="color-swatch swatch-black"></span>
+                    Матовий чорний
+                  </label>
+                </div>
+                <div class="color-option-item">
+                  <input type="radio" id="color-silver" name="color" value="silver">
+                  <label for="color-silver">
+                    <span class="color-swatch swatch-silver"></span>
+                    Сталевий сріблястий
+                  </label>
+                </div>
+                <div class="color-option-item">
+                  <input type="radio" id="color-blue" name="color" value="blue">
+                  <label for="color-blue">
+                    <span class="color-swatch swatch-blue"></span>
+                    Морський синій
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group form-group-full">
+              <label for="client-comment">Місто, відділення пошти або примітки:</label>
+              <textarea id="client-comment" name="comment" rows="4" cols="30" placeholder="Вкажіть місто доставки, номер відділення Нової Пошти або особливі побажання..."></textarea>
+            </div>
+            
+            <div class="form-group form-group-full">
+              <button type="submit" class="btn-submit">
+                <span>Підтвердити замовлення</span> &rarr;
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
-        <!-- Інтерактивна форма замовлення -->
-        <section id="order">
-            <h2>Оформити замовлення</h2>
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Контактні дані покупця</legend>
-                    <p>
-                        <label for="fullname">ПІБ (Прізвище, Ім'я, По батькові): *</label><br>
-                        <input type="text" id="fullname" name="fullname" required placeholder="Шевченко Тарас Григорович">
-                    </p>
-                    <p>
-                        <label for="phone">Номер телефону: *</label><br>
-                        <input type="tel" id="phone" name="phone" required placeholder="+380XXXXXXXXX" pattern="^\+?380\d{9}$">
-                    </p>
-                    <p>
-                        <label for="email">Електронна пошта (Email):</label><br>
-                        <input type="email" id="email" name="email" placeholder="example@email.ua">
-                    </p>
-                </fieldset>
+  <!-- Розділ 7: Підвал сайту (Footer) та Контакти -->
+  <footer id="contacts">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <h3>Контактна інформація</h3>
+          <div class="footer-contact-list">
+            <div class="contact-card-item">
+              <span class="contact-icon">✉️</span>
+              <div>
+                <strong>Електронна пошта:</strong><br>
+                <a href="mailto:support@thermokeep.ua">support@thermokeep.ua</a>
+              </div>
+            </div>
+            
+            <div class="contact-card-item">
+              <span class="contact-icon">📞</span>
+              <div>
+                <strong>Телефон підтримки:</strong><br>
+                <a href="tel:+380800500123">+380 (800) 500-123</a> <span>(Безкоштовно по Україні)</span>
+              </div>
+            </div>
+            
+            <div class="contact-card-item">
+              <span class="contact-icon">🕒</span>
+              <div>
+                <strong>Графік роботи:</strong><br>
+                <span>Пн-Пт: 09:00 - 18:00, Сб-Нд: вихідний</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <fieldset>
-                    <legend>Параметри замовлення</legend>
-                    <fieldset>
-                        <legend>Виберіть колір пляшки:</legend>
-                        <label>
-                            <input type="radio" name="color" value="black" checked> Матовий чорний
-                        </label><br>
-                        <label>
-                            <input type="radio" name="color" value="blue"> Океанічний синій
-                        </label><br>
-                        <label>
-                            <input type="radio" name="color" value="emerald"> Смарагдовий
-                        </label><br>
-                        <label>
-                            <input type="radio" name="color" value="silver"> Срібний
-                        </label>
-                    </fieldset>
+        <div class="footer-newsletter">
+          <h4>Підпишіться на знижки</h4>
+          <p>Отримуйте ексклюзивні пропозиції та сезонні промокоди першими.</p>
+          
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="footer-email">Підпишіться на наші новини та знижки (Email):</label>
+              <div class="newsletter-form-row">
+                <input type="email" id="footer-email" name="footer_email" placeholder="example@domain.com" required>
+                <button type="submit" class="btn-subscribe">Підписатися</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
 
-                    <p>
-                        <label for="volume">Вибір об'єму:</label><br>
-                        <select id="volume" name="volume">
-                            <option value="500">500 мл</option>
-                            <option value="750">750 мл</option>
-                            <option value="1000">1000 мл</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="quantity">Кількість (шт.):</label><br>
-                        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
-                    </p>
-
-                    <fieldset>
-                        <legend>Додаткові аксесуари:</legend>
-                        <label>
-                            <input type="checkbox" id="extra_case" name="extra" value="case"> Захисний термочохол для пляшки
-                        </label><br>
-                        <label>
-                            <input type="checkbox" id="extra_brush" name="extra" value="brush"> Еко-щітка для зручного чищення
-                        </label>
-                    </fieldset>
-
-                    <p>
-                        <label for="comment">Коментар до замовлення:</label><br>
-                        <textarea id="comment" name="comment" rows="4" cols="40" placeholder="Вкажіть особливі побажання, місто та номер відділення доставки..."></textarea>
-                    </p>
-                </fieldset>
-
-                <p>
-                    <button type="submit">Оформити замовлення</button>
-                    <button type="reset">Очистити</button>
-                </p>
-            </form>
-        </section>
-    </main>
-
-    <!-- Підвал сайту -->
-    <footer id="contacts">
-        <h2>Контактна інформація</h2>
-        <address>
-            <p><strong>Виробник & дистриб'ютор:</strong> AquaPure Ukraine</p>
-            <p>Телефон: <a href="tel:+380800123456">+380 (800) 123-456</a> (безкоштовно по Україні)</p>
-            <p>Email: <a href="mailto:info@aquapure.example.com">info@aquapure.example.com</a></p>
-            <p>Адреса: м. Київ, вул. Екологічна, буд. 10, офіс 42</p>
-            <p>
-                <strong>Ми в соціальних мережах:</strong>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> | 
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> | 
-                <a href="https://t.me" target="_blank" rel="noopener noreferrer">Telegram</a>
-            </p>
-        </address>
-        <p>&copy; 2026 AquaPure Bottle. Всі права захищено.</p>
-    </footer>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ТОВ «ThermoKeep Україна». Всі права захищено.</p>
+        <a href="#hero" class="back-to-top">Повернутися нагору &#8593;</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
